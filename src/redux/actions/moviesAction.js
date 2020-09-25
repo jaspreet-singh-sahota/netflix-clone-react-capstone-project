@@ -1,3 +1,9 @@
+import {
+  FETCH_MOVIE_COLLECTION_FAILURE,
+  FETCH_MOVIE_COLLECTION_REQUEST,
+  FETCH_MOVIE_COLLECTION_REQUEST
+} from './moviesActionType'
+
 export const fetchMoviesCollectionRequest = () => {
   return {
     type: FETCH_MOVIE_COLLECTION_REQUEST
