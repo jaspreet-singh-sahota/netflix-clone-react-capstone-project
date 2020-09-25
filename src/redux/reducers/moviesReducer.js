@@ -19,7 +19,7 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
     case FETCH_MOVIE_COLLECTION_SUCCESS: return {
       ...state,
       loading: false,
-      movieCollection: action.payload,
+      movieCollection: state.movieCollection.push(action.payload),
       error: ''
     }
     case FETCH_MOVIE_COLLECTION_FAILURE: return {
