@@ -9,12 +9,14 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
