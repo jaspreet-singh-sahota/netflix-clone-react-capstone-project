@@ -1,6 +1,7 @@
 import {API_KEY} from './API_KEY'
 
 const BASE_URL = 'https://api.themoviedb.org/3'
+export const image_url = 'https://image.tmdb.org/t/p/original/'
 
 const requests = {
   Trending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`,

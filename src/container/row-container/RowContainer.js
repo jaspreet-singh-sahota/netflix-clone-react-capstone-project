@@ -7,14 +7,19 @@ const RowContainer = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('jassi')
     dispatch(axios())
   }, [])
 
   return (
     <div>
-      <Row>Netflix</Row>
-      <Row>Netflix</Row>
+      <Row category={'NetflixOriginals'} isNetflixRow>Netflix Originals</Row>
+      <Row category={'Trending'}>Trending Now</Row>
+      <Row category={'ActionMovies'}>Action Movies</Row>
+      <Row category={'ComedyMovies'}>Comedy Movies</Row>
+      <Row category={'TopRated'}>Top Rated</Row>
+      <Row category={'RomanceMovies'}>Romance Movies</Row>
+      <Row category={'HorrorMovies'}>Horror Movies</Row>
+      <Row category={'Documentaries'}>Documentaries</Row>
     </div>
   )
 }
