@@ -1,4 +1,5 @@
 .row {
+  position: relative;
   margin-left: 20px;
   color: white;
 }

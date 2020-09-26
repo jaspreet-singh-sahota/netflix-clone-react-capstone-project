@@ -12,8 +12,6 @@ function Row({ category, children, isNetflixRow }) {
     return null;
   }
 
-  // console.log(movies)
-
   return (
     <div className={styles.row}>
       <h1 className={styles.title}>{children}</h1>
