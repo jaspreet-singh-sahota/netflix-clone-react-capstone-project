@@ -11,9 +11,7 @@ import {
 const fetchMovieCollection = () => {
   return (dispatch) => {
     dispatch(fetchMoviesCollectionRequest)
-    Object.entries(requests).map((key, value) => {
-      console.log(key[0])
-      console.log(key[1])
+    Object.entries(requests).map((key) => {
       axios.get(key[1])
         .then(response => {
           const movieData = response.data.results
