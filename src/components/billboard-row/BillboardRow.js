@@ -20,21 +20,19 @@ const BillboardRow = () => {
   }
 
   const selectedMovie = netflixOriginalsCollection()
-  console.log(selectedMovie)
 
-  function truncate(str, n) {
-    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  function truncate(str, num) {
+    return str?.length > num ? str.substr(0, num - 1) + "..." : str;
   }
-  console.log(movies.NetflixOriginals)
 
   return (
     <div>
-      <div className={styles['image-container']}>{selectedMovie ?
-        (
+      <div className={styles['image-container']}>
+        
           <div>
             <img
               className={styles.image}
-              src={`${image_url}${selectedMovie.backdrop_path}`}
+              src={`${image_url}${selectedMovie?.backdrop_path}`}
               alt='Billboard-cover-image'
             />
             <div className={styles.contents}>
@@ -42,11 +40,11 @@ const BillboardRow = () => {
               <button className={`${styles.button} ${styles.button2}`}><FiInfo className={styles.icons}/>More info</button>
             </div>
             <h1 className={styles.description}>
-              {truncate(selectedMovie.overview, 140)}
+              {truncate(selectedMovie?.overview, 140)}
             </h1>
             <div className={styles.fadeBottom}></div>
           </div>
-        ) : null}
+  
       </div>
     </div>
   )
