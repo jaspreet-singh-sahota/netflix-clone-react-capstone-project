@@ -3,18 +3,21 @@ import axios from '../axios/axios'
 import { useDispatch, useSelector } from "react-redux";
 
 
-function Row({ title, children }) {
+function Row({ children }) {
   const StoreInfo = useSelector(state => state.movies)
-  const [movies , setMovies] = useState(StoreInfo.movieCollection)
-  console.log(movies)
+  const [movies] = useState(StoreInfo.movieCollection)
   const dispatch = useDispatch()
+
   useEffect(() => {
-    console.log(dispatch(axios()))
+    dispatch(axios())
   }, [])
-  console.log(movies)
+  
   return (
     <div className="row">
-      <h2>{children}</h2>
+      {
+        console.log(movies.Trending)
+        
+      }
     </div>
   )
 }

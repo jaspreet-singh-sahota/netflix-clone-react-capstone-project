@@ -1,4 +1,5 @@
 import axios from 'axios'
+import requests from './API_END_POINTS'
 
 import {
   fetchMoviesCollectionSuccess,
@@ -10,16 +11,19 @@ import {
 const fetchMovieCollection = () => {
   return (dispatch) => {
     dispatch(fetchMoviesCollectionRequest)
-    axios.get('https://jsonplaceholder.typicode.com/users')
-      .then(response => {
-        const movieData = response.data
-        console.log(response.data)
-        dispatch(fetchMoviesCollectionSuccess(movieData))
-      })
-      .catch(error => {
-        const errorMessage = error.message
-        dispatch(fetchMoviesCollectionFailure(errorMessage))
-      })
+    Object.entries(requests).map((key, value) => {
+      console.log(key[0])
+      console.log(key[1])
+      axios.get(key[1])
+        .then(response => {
+          const movieData = response.data.results
+          dispatch(fetchMoviesCollectionSuccess(movieData, key[0]))
+        })
+        .catch(error => {
+          const errorMessage = error.message
+          dispatch(fetchMoviesCollectionFailure(errorMessage))
+        })
+    })
   }
 }
 
