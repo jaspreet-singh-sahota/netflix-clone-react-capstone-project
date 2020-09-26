@@ -30,5 +30,6 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
     default: return state;
   }
 };
+// { ...state.movieCollection, [state.movieCollection[action.genre]]: action.payload },
 
 export default moviesReducer;
