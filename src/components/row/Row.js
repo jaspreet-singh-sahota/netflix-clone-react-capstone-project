@@ -5,7 +5,7 @@ import styles from './styles/Row.module.css'
 
 
 function Row({ category, children, isNetflixRow }) {
-  const StoreInfo = useSelector(state => state.movies)
+  const StoreInfo = useSelector(state => state.movieCategory)
   const [movies] = useState(StoreInfo.movieCollection)
 
   if (!movies[category]) {
