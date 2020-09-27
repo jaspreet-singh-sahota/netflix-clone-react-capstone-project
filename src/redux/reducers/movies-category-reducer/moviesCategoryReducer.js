@@ -1,8 +1,8 @@
 import {
   FETCH_MOVIE_COLLECTION_REQUEST,
   FETCH_MOVIE_COLLECTION_SUCCESS,
-  FETCH_MOVIE_COLLECTION_FAILURE
-} from "../actions/moviesActionType";
+  FETCH_MOVIE_COLLECTION_FAILURE,
+} from "../../actions/actionType";
 
 const INITIAL_STATE = {
   loading: false,
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
   error: ''
 };
 
-const moviesReducer = (state = INITIAL_STATE, action) => {
+const moviesCategoryReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_MOVIE_COLLECTION_REQUEST: return {
       ...state,
@@ -30,6 +30,5 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
     default: return state;
   }
 };
-// { ...state.movieCollection, [state.movieCollection[action.genre]]: action.payload },
 
-export default moviesReducer;
+export default moviesCategoryReducer;
