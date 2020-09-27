@@ -1,0 +1,13 @@
+.image {
+  object-fit: contain;
+  width: 100%;
+  max-height: 150px;
+  margin-right: 5px;
+  transition: transform 450ms;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image:hover {
+  transform: scale(1.08);
+}
