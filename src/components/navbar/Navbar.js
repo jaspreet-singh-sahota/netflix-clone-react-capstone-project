@@ -1,14 +1,13 @@
-import React, { useEffect, useState, useReducer } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles/Navbar.module.css'
 import { FiGift } from 'react-icons/fi'
 import { FaBell } from 'react-icons/fa'
 import { MdArrowDropDown } from 'react-icons/md'
 import { ImSearch } from "react-icons/im"
-import { useSelector } from 'react-redux'
+import SearchInput from '../search-input/SearchInput'
 
 function Navbar() {
   const [show, handleShow] = useState(false)
-  const movies = useSelector(state => state.allMovies?.movieCollection ? state.allMovies?.movieCollection : [])
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -18,15 +17,6 @@ function Navbar() {
       window.removeEventListener("scroll");
     }
   }, [])
-  
-  const handleSearch = (e) => {
-    const search = e.target.value
-
-    return movies.filter(movie =>  {
-      const name = movie.name || movie.title
-      return name.toLowerCase().includes(search.toLowerCase())
-    })
-  }
 
   return (
     <div className={`${styles.navbar} ${show && styles.navbarColor}`}>
@@ -47,11 +37,7 @@ function Navbar() {
         </div>
         <div className={styles['search-container']}>
           <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
-          <input type='text'
-            placeholder='Title, people, genres'
-            className={styles.input}
-            onChange={handleSearch}
-          />
+          <SearchInput/>
           <a className={styles.children}>CHILDREN</a>
           <FiGift className={styles.icons} />
           <FaBell className={styles.icons} />
