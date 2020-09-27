@@ -1,0 +1,92 @@
+.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  height: 35px;
+  z-index: 110;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+div a, .search-container{
+color: #fff;
+font-weight: lighter;
+font-size: 16px;
+margin-left: 18px;
+cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+}
+
+.icons, .dropdown, .children{
+  margin-right: 25px;
+  margin-top: 7px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.search-icon {
+  margin-right: 0;
+}
+
+.dropdown {
+  margin-right: 0;
+  margin-left: 7px;
+}
+            
+.children {
+  font-size: 16px;
+  margin-top: 11px;
+}
+
+.links {
+  margin-left: 30px;
+  margin-top: 7px;
+}
+
+.navbarColor {
+  background-color: rgb(20, 20, 20);
+}
+
+.flex-container-logo {
+  display: flex;
+}
+
+.logo{
+  margin-top: 3px;
+  left: 56px;
+  width: 103px;
+  object-fit: contain;
+}
+
+.avatar{
+  margin-top: 3px;
+  right: 56px;
+  width: 32px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.flex-container {
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 56px;
+}
+
+.input {
+  margin-top: 1px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  transition: width 0.5s;
+  height: 30px;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 3px 10px;
+  width: 260px;
+}
