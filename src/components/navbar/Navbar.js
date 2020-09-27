@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux'
 
 function Navbar() {
   const [show, handleShow] = useState(false)
-  const storeInfo = useSelector(state => state.movies?.movieCollection ? state.movies?.movieCollection : [])
-// const [state, dispatch] = useReducer(reducer, initialState, init)
+  const movies = useSelector(state => state.allMovies?.movieCollection ? state.allMovies?.movieCollection : [])
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 100 ? handleShow(true) : handleShow(false);
@@ -18,6 +18,15 @@ function Navbar() {
       window.removeEventListener("scroll");
     }
   }, [])
+  
+  const handleSearch = (e) => {
+    const search = e.target.value
+
+    return movies.filter(movie =>  {
+      const name = movie.name || movie.title
+      return name.toLowerCase().includes(search.toLowerCase())
+    })
+  }
 
   return (
     <div className={`${styles.navbar} ${show && styles.navbarColor}`}>
@@ -38,7 +47,11 @@ function Navbar() {
         </div>
         <div className={styles['search-container']}>
           <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
-          <input type='text' placeholder='Title, people, genres' className={styles.input} />
+          <input type='text'
+            placeholder='Title, people, genres'
+            className={styles.input}
+            onChange={handleSearch}
+          />
           <a className={styles.children}>CHILDREN</a>
           <FiGift className={styles.icons} />
           <FaBell className={styles.icons} />
