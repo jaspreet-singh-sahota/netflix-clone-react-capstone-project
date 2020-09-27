@@ -6,7 +6,7 @@ import { GrPlayFill } from 'react-icons/gr'
 import { FiInfo } from 'react-icons/fi'
 
 const BillboardRow = () => {
-  const StoreInfo = useSelector(state => state.movies)
+  const StoreInfo = useSelector(state => state.movieCategory)
   const [movies] = useState(StoreInfo.movieCollection)
 
   const randomMovie = () => {
@@ -33,7 +33,7 @@ const BillboardRow = () => {
             <img
               className={styles.image}
               src={`${image_url}${selectedMovie?.backdrop_path}`}
-              alt='Billboard-cover-image'
+              alt='Billboard-cover'
             />
             <div className={styles.contents}>
               <button className={styles.button}><GrPlayFill className={styles.icons}/>Play</button>
