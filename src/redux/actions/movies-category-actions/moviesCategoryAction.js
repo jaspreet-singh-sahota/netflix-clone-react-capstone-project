@@ -2,7 +2,7 @@ import {
   FETCH_MOVIE_COLLECTION_FAILURE,
   FETCH_MOVIE_COLLECTION_REQUEST,
   FETCH_MOVIE_COLLECTION_SUCCESS
-} from './moviesActionType'
+} from '../actionType'
 
 export const fetchMoviesCollectionRequest = () => {
   return {
