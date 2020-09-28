@@ -34,8 +34,8 @@
 
 .link {
   color: #808080;
-  margin-bottom: 20px;
-  font-size: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -46,7 +46,7 @@
 .title {
   font-size: 16px;
   color: #808080;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .service-button-container {
@@ -57,7 +57,7 @@
 .service-button {
   color: #808080;
   border:  1px solid #808080;
-  font-size: 15px;
+  font-size: 13.4px;
   padding: .5em;
   width: fit-content;
   cursor: pointer;
@@ -68,8 +68,8 @@
 }
 
 .icons {
-  font-size: 30px;
-  margin: 0 15px;
+  font-size: 25px;
+  margin: 0 14px;
   cursor: pointer;
 }
 
@@ -79,7 +79,7 @@
 
 .icons2 {
   position: relative;
-  font-size: 36px;
+  font-size: 29px;
   margin: 0 15px;
   cursor: pointer;
 }
