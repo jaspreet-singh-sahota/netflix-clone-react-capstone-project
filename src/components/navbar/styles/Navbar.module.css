@@ -2,8 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 0;
-  height: 35px;
+  height: 68px;
   z-index: 110;
   transition-timing-function: ease-in;
   transition: all 0.5s;
@@ -12,7 +11,7 @@
 .link, .search-container{
 color: #fff;
 font-weight: lighter;
-font-size: 16px;
+font-size: 14px;
 margin-left: 18px;
 cursor: pointer;
 text-decoration: none;
@@ -24,33 +23,44 @@ text-decoration: none;
 
 
 .search-container {
+  height: 100%;
   display: flex;
+  align-items: center;
 }
 
-.icons, .dropdown, .children{
-  margin-right: 25px;
-  margin-top: 7px;
-  font-size: 25px;
+.icons, .dropdown, .children, .gift{
+  margin-right: 20px;
+  margin-top: 1px;
+  font-size: 22px;
   cursor: pointer;
 }
 
 .search-icon {
-  margin-right: 0;
+  position: relative;
+  font-size: 20px;
+  left: 58px
 }
 
 .dropdown {
+  font-size: 25px;
   margin-right: 0;
-  margin-left: 7px;
+  margin-left: 4px;
 }
             
 .children {
-  font-size: 16px;
-  margin-top: 11px;
+  font-size: 13.5px;
+  font-weight: 400;
+  margin-top: 1px;
+  letter-spacing: 1px;
+}
+
+.gift {
+  margin-right: 27px;
 }
 
 .links {
-  margin-left: 30px;
-  margin-top: 7px;
+  margin-left: 25px;
+  margin-top: 5.5px;
 }
 
 .navbarColor {
@@ -63,8 +73,7 @@ text-decoration: none;
 
 .logo{
   margin-top: 3px;
-  width: 103px;
-  left: 56px;
+  width: 93px;
   object-fit: contain;
 }
 
@@ -74,18 +83,18 @@ text-decoration: none;
 
 .avatar{
   margin-top: 3px;
-  right: 56px;
-  width: 32px;
+  right: 50px;
+  width: 30px;
   object-fit: contain;
   border-radius: 5px;
 }
 
 .flex-container {
   display: flex;
-  height: 35px;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
-  margin: 0 56px;
+  margin: 0 43px 0 51px;
 }
 
 .input {
@@ -95,8 +104,12 @@ text-decoration: none;
   border: 1px solid white;
   transition: width 0.5s;
   height: 30px;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 10px;
-  padding: 3px 10px;
-  width: 260px;
+  padding: 0.3px 10px;
+  width: 215px;
+}
+
+input[type=text] {
+  padding-left: 40px;
 }
