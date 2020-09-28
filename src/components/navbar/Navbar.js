@@ -10,7 +10,31 @@ import SearchResult from '../search-result/SearchResult'
 
 function Navbar() {
   const [show, handleShow] = useState(false)
-  
+  const movies = useSelector(state => state.allMovies?.movieCollection ? state.allMovies?.movieCollection : [])
+  const [search, setSearch] = useState([])
+  const [searchActive, setSearchActive] = useState(false)
+
+  function getUniqueMovies(movies, key) {
+    const unique = movies.map(movie => movie[key])
+      .map((movie, i, final) => final.indexOf(movie) === i && i)
+      .filter((movie) => movies[movie]).map(movie => movies[movie]);
+    return unique;
+  }
+
+  const uniqueMovies = getUniqueMovies(movies, 'id')
+
+  const handleSearch = (e) => {
+    if (e.target.value === '') {
+      setSearch([])
+      setSearchActive(false)
+      return
+    }
+    setSearchActive(true)
+    setSearch(uniqueMovies.filter(movie => {
+      const name = movie.name || movie.title
+      return name.toLowerCase().includes(e.target.value.toLowerCase())
+    }))
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
