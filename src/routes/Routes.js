@@ -15,6 +15,9 @@ const Routes = () => {
         <Route path="/" component={App} exact />
         <Route path="/search/" component={SearchResult} exact />
         <Route path="/action/" component={MovieCategory} exact />
+        <Route path="/horror/" component={MovieCategory} exact />
+        <Route path="/comedy/" component={MovieCategory} exact />
+        <Route path="/top_rated/" component={MovieCategory} exact />
         <Route path="/movie/:id" component={Movie} exact />
       </Switch>
       <Footer />
