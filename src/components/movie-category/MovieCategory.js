@@ -1,11 +1,12 @@
 import React from 'react'
 import Row from '../row/Row'
 
-const MovieCategory = (props) => {
-  console.log(props)
+const MovieCategory = ({location}) => {
+  const category = location.state.category
+  const title = location.state.title
   return (
     <div>
-      {/* <Row category={category}>{children}</Row> */}
+      <Row category={category}>{title}</Row>
     </div>
   )
 }
