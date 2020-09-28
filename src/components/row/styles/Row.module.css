@@ -4,11 +4,27 @@
   color: white;
 }
 
+.column {
+  margin: 20px 51px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 7px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.column-link {
+  height: 100%;
+  width: auto;
+}
+
 .row-container {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 17px 20px 17px 0;
+  padding-right: 20px;
 }
 
 .row-container::-webkit-scrollbar {
@@ -30,7 +46,7 @@
 .image {
   object-fit: contain;
   max-height: 132px;
-  margin-right: 5px;
+  margin: 17px 5px 17px 0;
   transition: transform 450ms;
   border-radius: 3px;
   cursor: pointer;
@@ -41,7 +57,7 @@
 }
 
 .imageLarge {
-  margin-right: 5px;
+  margin: 1em 5px 17px 0;
   max-height: 250px;
   transition: transform 450ms;
   border-radius: 5px;

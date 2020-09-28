@@ -5,7 +5,7 @@ import styles from './styles/Row.module.css'
 import { Link } from 'react-router-dom';
 
 
-function Row({ category, children, isNetflixRow }) {
+function Row({ category, children, isNetflixRow, isColumn }) {
   const data = useSelector(state => state.movieCategory.movieCollection )
 
   let  FilteredMovies = data.filter(mov => mov[category])?.[0]
@@ -18,11 +18,11 @@ function Row({ category, children, isNetflixRow }) {
     <div className={styles.row}>
       <h1 className={styles.title}>{children}</h1>
 
-      <div className={styles["row-container"]}>
+      <div className={isColumn ? styles.column : styles["row-container"]}>
         {movieKeys?.map((key) => {
           const movie = FilteredMovies[category][key]
           return(
-          <Link key={movie.id} className={styles.link} to={{ pathname: `movie/${movie.id}`, state: { movie } }}>
+            <Link key={movie.id} className={isColumn ? styles['column-link'] : styles.link} to={{ pathname: `movie/${movie.id}`, state: { movie } }}>
             <img
               key={movie.id}
               className={isNetflixRow ? styles.imageLarge : styles.image}
