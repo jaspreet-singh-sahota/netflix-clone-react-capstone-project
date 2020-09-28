@@ -1,6 +1,6 @@
 import React from 'react'
-import Row from '../row/Row'
 import styles from './styles/MoviesCategories.module.css'
+import Row from '../../components/row/Row'
 
 const MovieCategory = ({location}) => {
   const category = location.state.category

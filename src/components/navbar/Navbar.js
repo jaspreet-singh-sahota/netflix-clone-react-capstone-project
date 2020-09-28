@@ -4,9 +4,9 @@ import { FiGift } from 'react-icons/fi'
 import { FaBell } from 'react-icons/fa'
 import { MdArrowDropDown } from 'react-icons/md'
 import { ImSearch } from "react-icons/im"
-import { Link, Redirect, NavLink } from 'react-router-dom'
+import { Redirect, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import SearchResult from '../search-result/SearchResult'
+import SearchResult from '../../pages/search-result-page/SearchResult'
 
 function Navbar() {
   const [show, handleShow] = useState(false)

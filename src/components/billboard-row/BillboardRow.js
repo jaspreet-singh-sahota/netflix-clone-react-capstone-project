@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { image_url } from '../../axios/API_END_POINTS'
 import styles from './styles/BillboardRow.module.css'

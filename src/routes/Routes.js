@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from '../container/App'
-import SearchResult from '../components/search-result/SearchResult'
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
-import MovieCategory from '../components/movie-category/MovieCategory'
-import Movie from '../components/pages/Movie'
+import Movie from '../pages/movie-show-page/Movie'
+import MovieCategory from '../pages/movie-category-page/MovieCategory'
+import SearchResult from '../pages/search-result-page/SearchResult'
 
 const Routes = () => {
   return (
