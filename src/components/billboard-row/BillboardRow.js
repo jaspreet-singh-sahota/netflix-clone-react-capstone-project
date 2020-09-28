@@ -40,7 +40,7 @@ const BillboardRow = () => {
               <button className={`${styles.button} ${styles.button2}`}><FiInfo className={styles.icons}/>More info</button>
             </div>
             <h1 className={styles.description}>
-              {truncate(selectedMovie?.overview, 140)}
+              {truncate(selectedMovie?.overview, 132)}
             </h1>
             <div className={styles.fadeBottom}></div>
           </div>
