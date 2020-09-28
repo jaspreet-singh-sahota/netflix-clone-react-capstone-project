@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import { image_url } from '../../axios/API_END_POINTS'
 import styles from './styles/Row.module.css'
+import { Link } from 'react-router-dom';
 
 
 function Row({ category, children, isNetflixRow }) {
@@ -18,12 +19,14 @@ function Row({ category, children, isNetflixRow }) {
 
       <div className={styles["row-container"]}>
         {movies[category].map((movie) => (
-          <img
-            key={movie.id}
-            className={isNetflixRow ? styles.imageLarge : styles.image}
-            src={`${image_url}${isNetflixRow ? movie.poster_path : movie.backdrop_path}`}
-            alt={movie.name}
-          />
+          <Link key={movie.id} className={styles.link} to={{pathname: `movie/${movie.id}`, state: {movie}}}>
+            <img
+              key={movie.id}
+              className={isNetflixRow ? styles.imageLarge : styles.image}
+              src={`${image_url}${isNetflixRow ? movie.poster_path : movie.backdrop_path}`}
+              alt={movie.name}
+            />
+          </Link>
         ))
         }
       </div>
