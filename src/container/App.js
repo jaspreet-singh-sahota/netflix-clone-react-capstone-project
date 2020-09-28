@@ -1,19 +1,21 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import store from '../redux/store';
-import Footer from '../components/footer/Footer';
+import React, { useEffect } from 'react';
 import RowContainer from './row-container/RowContainer';
 import BillboardRow from '../components/billboard-row/BillboardRow';
-import Navbar from '../components/navbar/Navbar';
+import { useDispatch } from 'react-redux';
+import axios from '../axios/axios'
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(axios())
+  }, [])
+
   return (
-    <Provider store={store}>
-      <Navbar/>
+    <div>
       <BillboardRow/>
       <RowContainer/>
-      <Footer/>
-    </Provider>
+    </div>
   );
 }
 

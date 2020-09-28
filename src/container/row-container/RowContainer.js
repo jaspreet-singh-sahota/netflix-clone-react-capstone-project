@@ -1,16 +1,8 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import axios from '../../axios/axios'
 import Row from '../../components/row/Row'
 import styles from './styles/RowContainer.module.css'
 
 const RowContainer = () => {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(axios())
-  }, [])
-
   return (
     <div className={styles.container}>
       <Row category={'NetflixOriginals'} isNetflixRow>Netflix Originals</Row>
