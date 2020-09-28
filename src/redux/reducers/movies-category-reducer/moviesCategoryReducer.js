@@ -6,7 +6,7 @@ import {
 
 const INITIAL_STATE = {
   loading: false,
-  movieCollection: {},
+  movieCollection: [],
   error: ''
 };
 
@@ -19,7 +19,7 @@ const moviesCategoryReducer = (state = INITIAL_STATE, action) => {
     case FETCH_MOVIE_COLLECTION_SUCCESS: return {
       ...state,
       loading: false,
-      movieCollection: INITIAL_STATE.movieCollection[action.genre] = action.payload,
+      movieCollection: [ ...state.movieCollection, {[action.genre]: {...state.movieCollection[action.genre] = action.payload}}],
       error: ''
     }
     case FETCH_MOVIE_COLLECTION_FAILURE: return {
