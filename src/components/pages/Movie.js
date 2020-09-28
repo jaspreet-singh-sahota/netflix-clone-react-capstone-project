@@ -16,7 +16,7 @@ const Movie = ({ location }) => {
     <div className={styles.container}>
       <div className={styles['info-container']}>
         <h1 className={styles.text}>{truncate(movie.name, 25) || truncate(movie.title, 25)}</h1>
-        <h2 className={styles['movie-info']}>{movie.overview}</h2>
+        <h2 className={styles['movie-info']}>{truncate(movie.overview, 385)}</h2>
         <div className={styles['button-container']}>
           <div className={styles.buttons}>
             <button className={styles['play-button']}><IoMdPlay className={styles.icons} /> PLAY</button>
