@@ -4,8 +4,8 @@ import styles from './styles/searchResult.module.css'
 
 const SearchResult = ({movies}) => {
   return (
-    <div>
-      {movies !== [] ? movies.map((movie) => (
+    <div className={styles['container-result']}>
+      {movies?.length ? movies.map((movie) => (
         <img
           key={movie.id}
           className={styles.image}
