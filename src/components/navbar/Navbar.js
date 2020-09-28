@@ -4,10 +4,13 @@ import { FiGift } from 'react-icons/fi'
 import { FaBell } from 'react-icons/fa'
 import { MdArrowDropDown } from 'react-icons/md'
 import { ImSearch } from "react-icons/im"
-import SearchInput from '../search-input/SearchInput'
+import { Link, Redirect, NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import SearchResult from '../search-result/SearchResult'
 
 function Navbar() {
   const [show, handleShow] = useState(false)
+  
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -19,38 +22,50 @@ function Navbar() {
   }, [])
 
   return (
-    <div className={`${styles.navbar} ${show && styles.navbarColor}`}>
-      <div className={styles['flex-container']}>
-        <div className={styles['flex-container-logo']}>
-          <img
-            className={styles.logo}
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png"
-            alt="Netflix Logo"
-          />
-          <div className={styles.links}>
-            <a>Home</a>
-            <a>Action</a>
-            <a>Horror</a>
-            <a>Comedy</a>
-            <a>Top rated</a>
+    <div>
+      <div className={`${styles.navbar} ${show && styles.navbarColor}`}>
+        <div className={styles['flex-container']}>
+          <div className={styles['flex-container-logo']}>
+            <NavLink className={styles.link} to="/" className={styles['netflix-logo']}>
+              <img
+                className={styles.logo}
+                src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png"
+                alt="Netflix Logo"
+              />
+            </NavLink>
+            <div className={styles.links}>
+              <NavLink className={styles.link} to="/" exact activeStyle={{fontWeight: "bold"}}>Home</NavLink>
+              <Link className={styles.link} to='/action/' params={{category:'ActionMovies'}} exact activeStyle={{ fontWeight: "bold" }}>Action</Link>
+              <Link className={styles.link}>Horror</Link>
+              <Link className={styles.link}>Comedy</Link>
+              <Link className={styles.link}>Top rated</Link>
+            </div>
           </div>
-        </div>
-        <div className={styles['search-container']}>
-          <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
-          <SearchInput/>
-          <a className={styles.children}>CHILDREN</a>
-          <FiGift className={styles.icons} />
-          <FaBell className={styles.icons} />
-          <div>
-            <img
-              className={styles.avatar}
-              src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
-              alt="Netflix Logo"
-            />
+          <div className={styles['search-container']}>
+            <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
+            {searchActive ?
+              <Redirect className={styles.link} to="/search"/> : <Redirect to="/"/>
+            }
+              <input type='text'
+                placeholder='Title, people, genres'
+                className={styles.input}
+                onChange={handleSearch}
+              />
+            <a className={`${styles.children} ${styles.link}`}>CHILDREN</a>
+            <FiGift className={styles.icons} />
+            <FaBell className={styles.icons} />
+            <div>
+              <img
+                className={styles.avatar}
+                src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+                alt="Netflix Logo"
+              />
+            </div>
+            <MdArrowDropDown className={styles.dropdown} />
           </div>
-          <MdArrowDropDown className={styles.dropdown} />
         </div>
       </div>
+      {searchActive ? <SearchResult movies={search} /> : null}
     </div>
   )
 }
