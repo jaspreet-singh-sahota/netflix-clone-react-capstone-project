@@ -59,10 +59,10 @@ function Navbar() {
             </NavLink>
             <div className={styles.links}>
               <NavLink className={styles.link} to="/" exact activeStyle={{fontWeight: "bold"}}>Home</NavLink>
-              <Link className={styles.link} to='/action/' params={{category:'ActionMovies'}} exact activeStyle={{ fontWeight: "bold" }}>Action</Link>
-              <Link className={styles.link}>Horror</Link>
-              <Link className={styles.link}>Comedy</Link>
-              <Link className={styles.link}>Top rated</Link>
+              <NavLink className={styles.link} to={{ pathname: '/action/', state: {category: 'ActionMovies', title: 'Action'}}} exact activeStyle={{ fontWeight: "bold" }}>Action</NavLink>
+              <NavLink className={styles.link} to={{ pathname: '/horror/', state: { category: 'HorrorMovies', title: 'Horror' } }} exact activeStyle={{ fontWeight: "bold" }}>Horror</NavLink>
+              <NavLink className={styles.link} to={{ pathname: '/comedy/', state: { category: 'ComedyMovies', title: 'Comedy'}}} exact activeStyle={{ fontWeight: "bold" }}>Comedy</NavLink>
+              <NavLink className={styles.link} to={{ pathname: '/top_rated/', state: { category: 'TopRated', title: 'Top rated'}}} exact activeStyle={{ fontWeight: "bold" }}>Top rated</NavLink>
             </div>
           </div>
           <div className={styles['search-container']}>
@@ -76,7 +76,7 @@ function Navbar() {
                 onChange={handleSearch}
               />
             <a className={`${styles.children} ${styles.link}`}>CHILDREN</a>
-            <FiGift className={styles.icons} />
+            <FiGift className={styles.gift} />
             <FaBell className={styles.icons} />
             <div>
               <img
