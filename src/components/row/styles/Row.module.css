@@ -1,6 +1,6 @@
 .row {
   position: relative;
-  margin-left: 20px;
+  margin-left: 51px;
   color: white;
 }
 
@@ -8,8 +8,7 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 20px;
-  margin-left: 16.5px;
+  padding: 17px 20px 17px 0;
 }
 
 .row-container::-webkit-scrollbar {
@@ -20,7 +19,7 @@
   font-size: 1.4vw;
   color: #e5e5e5;
   font-weight: 700;
-  margin: 1.6em 0 -.5em 2.5%;
+  margin: 1.6em 0 -.5em 0;
   min-width: 6em;
 }
 
@@ -30,10 +29,10 @@
 
 .image {
   object-fit: contain;
-  max-height: 145px;
+  max-height: 132px;
   margin-right: 5px;
   transition: transform 450ms;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
