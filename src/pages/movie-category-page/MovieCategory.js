@@ -1,7 +1,7 @@
 /* eslint-disable  import/no-named-as-default-member */
 /* eslint-disable  import/no-named-as-default */
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles/MoviesCategories.module.css';
 import Row from '../../components/row/Row';
 

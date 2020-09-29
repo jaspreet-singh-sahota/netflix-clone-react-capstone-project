@@ -43,8 +43,8 @@ function Row({
 Row.defaultProps = {
   category: 'Trending',
   children: 'Trending',
-  isNetflixRow: '',
-  isColumn: '',
+  isNetflixRow: false,
+  isColumn: false,
 };
 
 Row.propTypes = {

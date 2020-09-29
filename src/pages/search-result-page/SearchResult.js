@@ -3,9 +3,14 @@ import { IMAGE_URL } from '../../axios/API_END_POINTS'
 import styles from './styles/searchResult.module.css'
 
 const SearchResult = ({movies}) => {
+  
+  if (!movies) {
+    return null
+  }
+
   return (
     <div className={styles['container-result']}>
-      {movies?.length ? movies.map((movie) => (
+      {movies.length ? movies.map((movie) => (
         <img
           key={movie.id}
           className={styles.image}
