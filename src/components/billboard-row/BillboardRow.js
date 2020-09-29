@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { image_url } from '../../axios/API_END_POINTS'
+import { IMAGE_URL } from '../../axios/API_END_POINTS'
 import styles from './styles/BillboardRow.module.css'
 import { GrPlayFill } from 'react-icons/gr'
 import { FiInfo } from 'react-icons/fi'
@@ -26,7 +26,7 @@ const BillboardRow = () => {
           <div>
             <img
               className={styles.image}
-              src={`${image_url}${selectedMovie?.backdrop_path}`}
+              src={`${IMAGE_URL}${selectedMovie?.backdrop_path}`}
               alt='Billboard-cover'
             />
             <div className={styles.contents}>

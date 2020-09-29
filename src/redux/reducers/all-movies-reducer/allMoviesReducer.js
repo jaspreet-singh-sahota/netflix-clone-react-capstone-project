@@ -1,9 +1,9 @@
-import { FETCH_ALL_MOVIES } from "../../actions/actionType"
+import { FETCH_ALL_MOVIES } from '../../actions/actionType';
 
 const INITIAL_STATE = {
   loading: false,
   movieCollection: [],
-  error: ''
+  error: '',
 };
 
 const allMoviesReducer = (state = INITIAL_STATE, action) => {
@@ -11,11 +11,11 @@ const allMoviesReducer = (state = INITIAL_STATE, action) => {
     case FETCH_ALL_MOVIES: return {
       ...state,
       loading: false,
-      movieCollection: [ ...state.movieCollection, ...action.payload ],
-      error: ''
-    }
-    default: return state 
+      movieCollection: [...state.movieCollection, ...action.payload],
+      error: '',
+    };
+    default: return state;
   }
-}
+};
 
-export default allMoviesReducer
+export default allMoviesReducer;

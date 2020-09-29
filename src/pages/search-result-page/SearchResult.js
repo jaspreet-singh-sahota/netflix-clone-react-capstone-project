@@ -1,5 +1,5 @@
 import React from 'react'
-import {image_url} from '../../axios/API_END_POINTS'
+import { IMAGE_URL } from '../../axios/API_END_POINTS'
 import styles from './styles/searchResult.module.css'
 
 const SearchResult = ({movies}) => {
@@ -9,7 +9,7 @@ const SearchResult = ({movies}) => {
         <img
           key={movie.id}
           className={styles.image}
-          src={`${image_url}${movie.backdrop_path}`}
+          src={`${IMAGE_URL}${movie.backdrop_path}`}
           alt={movie.name}
         />
       )) : null

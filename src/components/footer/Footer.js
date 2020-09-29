@@ -1,6 +1,8 @@
 import React from 'react';
+import {
+  ImFacebook2, ImInstagram, ImTwitter, ImYoutube,
+} from 'react-icons/im';
 import styles from './styles/footer.module.css';
-import { ImFacebook2, ImInstagram, ImTwitter, ImYoutube } from 'react-icons/im'
 
 function Footer() {
   return (
@@ -9,8 +11,8 @@ function Footer() {
         <div className={styles.title}>
           <ImFacebook2 className={styles.icons} />
           <ImInstagram className={styles.icons} />
-          <ImTwitter className={styles.icons, styles.icons2} />
-          <ImYoutube className={styles.icons, styles.icons2} />
+          <ImTwitter className={styles.icons2} />
+          <ImYoutube className={styles.icons2} />
         </div>
         <div className={styles.row}>
           <div className={styles.column}>
@@ -40,11 +42,11 @@ function Footer() {
         </div>
         <div className={styles.link} href="#">Contact us</div>
       </div>
-      <div className={styles["service-button-container"]}>
+      <div className={styles['service-button-container']}>
         <div className={styles['service-button']}>Service Code</div>
       </div>
     </div>
   );
 }
 
-export default Footer
+export default Footer;

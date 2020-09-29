@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { image_url } from '../../axios/API_END_POINTS'
+import { IMAGE_URL } from '../../axios/API_END_POINTS'
 import styles from './styles/Row.module.css'
 import { Link } from 'react-router-dom';
 
@@ -26,7 +26,7 @@ function Row({ category, children, isNetflixRow, isColumn }) {
             <img
               key={movie.id}
               className={isNetflixRow ? styles.imageLarge : styles.image}
-              src={`${image_url}${isNetflixRow ? movie.poster_path : movie.backdrop_path}`}
+              src={`${IMAGE_URL}${isNetflixRow ? movie.poster_path : movie.backdrop_path}`}
               alt={movie.name}
             />
           </Link>

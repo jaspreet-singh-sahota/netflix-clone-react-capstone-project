@@ -1,13 +1,16 @@
+/* eslint-disable  no-return-assign */
+/* eslint-disable  no-param-reassign */
+
 import {
   FETCH_MOVIE_COLLECTION_REQUEST,
   FETCH_MOVIE_COLLECTION_SUCCESS,
   FETCH_MOVIE_COLLECTION_FAILURE,
-} from "../../actions/actionType";
+} from '../../actions/actionType';
 
 const INITIAL_STATE = {
   loading: false,
   movieCollection: [],
-  error: ''
+  error: '',
 };
 
 const moviesCategoryReducer = (state = INITIAL_STATE, action) => {
@@ -15,18 +18,21 @@ const moviesCategoryReducer = (state = INITIAL_STATE, action) => {
     case FETCH_MOVIE_COLLECTION_REQUEST: return {
       ...state,
       loading: true,
-    }
+    };
     case FETCH_MOVIE_COLLECTION_SUCCESS: return {
       ...state,
       loading: false,
-      movieCollection: [ ...state.movieCollection, {[action.genre]: {...state.movieCollection[action.genre] = action.payload}}],
-      error: ''
-    }
+      movieCollection:
+        [...state.movieCollection,
+          { [action.genre]: { ...state.movieCollection[action.genre] = action.payload } },
+        ],
+      error: '',
+    };
     case FETCH_MOVIE_COLLECTION_FAILURE: return {
       loading: false,
       movieCollection: [],
-      error: action.payload
-    }
+      error: action.payload,
+    };
     default: return state;
   }
 };
