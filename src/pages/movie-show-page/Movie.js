@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { IoMdPlay, IoMdAdd } from 'react-icons/io';
 import PropTypes from 'prop-types';
+import movieTrailer from 'movie-trailer';
+import YouTube from 'react-youtube';
 import { IMAGE_URL } from '../../axios/API_END_POINTS';
 import styles from './styles/Movie.module.css';
-import movieTrailer from 'movie-trailer'
-import YouTube from 'react-youtube'
 
 const Movie = ({ location }) => {
   const { movie } = location.state;
-  const [trailerUrl, setTrailerUrl] = useState('')
-  const [isPlaying, setIsPlaying] = useState(false)
+  const [trailerUrl, setTrailerUrl] = useState('');
+  const [isPlaying, setIsPlaying] = useState(false);
 
   if (!movie) {
     return null;
   }
 
   const handleStopVideo = () => {
-    setIsPlaying(false)
-  }
+    setIsPlaying(false);
+  };
 
-  const handleMovieUrl = (movie) => {
-    movieTrailer((movie ? movie.name : null) || (movie ? movie.title : null) || "")
-      .then((url) => {
+  const handleMovieUrl = movie => {
+    movieTrailer((movie ? movie.name : null) || (movie ? movie.title : null) || '')
+      .then(url => {
         const urlParams = new URLSearchParams(new URL(url).search);
         setTrailerUrl(urlParams.get('v'));
       })
-      .catch(setTrailerUrl('SIZpLFPQLLg'));
-    setIsPlaying(true)
-  }
+      .catch(error => error);
+    setIsPlaying(true);
+  };
 
-  const handlePlayVideo = (event) => {
+  const handlePlayVideo = event => {
     event.target.pauseVideo();
-  }
+  };
 
   const opts = {
     height: '100%',
@@ -62,12 +62,12 @@ const Movie = ({ location }) => {
                 <IoMdPlay className={styles.icons} />
                 {' '}
                 PLAY
-            </button>
+              </button>
               <button type="submit" className={styles['list-button']}>
                 <IoMdAdd className={styles.icons} />
                 {' '}
                 MY LIST
-            </button>
+              </button>
             </div>
           </div>
         </div>
@@ -80,8 +80,21 @@ const Movie = ({ location }) => {
           />
         </div>
       </div>
-      {isPlaying ? <div onClick={handleStopVideo} className={styles.modal}></div> : null}
-      {isPlaying  && <YouTube className={styles.video} videoId={trailerUrl} opts={opts} onReady={handlePlayVideo} />}
+      {/* eslint-disable jsx-a11y/click-events-have-key-events */}
+      {/* eslint-disable jsx-a11y/no-static-element-interactions */}
+      {isPlaying ? <div onClick={handleStopVideo} className={styles.modal} /> : null}
+      {
+        isPlaying ? (
+          <YouTube
+            role="button"
+            className={styles.video}
+            videoId={trailerUrl.length ? trailerUrl : 'SIZpLFPQLLg'}
+            opts={opts}
+            onReady={handlePlayVideo}
+          />
+        )
+          : null
+      }
     </div>
   );
 };
