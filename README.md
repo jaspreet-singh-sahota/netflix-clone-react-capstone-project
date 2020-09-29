@@ -66,7 +66,7 @@ Netflix clone App built with React and Redux. The objective of this project is t
 
 ## Live Link (Heroku)
 
-[Not hosted yet](#)
+[Click Here](https://jassi-netflix-clone.herokuapp.com/)
 
 
 <!-- INSTALLATION -->
@@ -98,13 +98,14 @@ Congrats, now you have a running 'Netflix-clone-app' locally in your browser.
 - Modules css
 - Styled components
 - yarn
-- NPM
+- npm
 - MovieDB API
 - React-youtube
 - Movie-Trailer
 - React-icons
 - Axios
 - Prop-types
+- [Heroku](https://jassi-netflix-clone.herokuapp.com/)
 
 <!-- Future Updates -->
 
