@@ -7,7 +7,9 @@ import { FiInfo } from 'react-icons/fi'
 
 const BillboardRow = () => {
   const moviesData = useSelector(state => state.movieCategory.movieCollection)
+  /* eslint-disable */
   let FilteredMovies = moviesData.filter(movies => movies['NetflixOriginals'])?.[0]
+  /* eslint-enable */
 
   const randomKey = () => {
     return Math.floor(Math.random() * 20)
