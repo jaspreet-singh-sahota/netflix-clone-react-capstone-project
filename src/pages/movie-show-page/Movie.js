@@ -39,7 +39,6 @@ const Movie = ({ location }) => {
           alt={movie.name}
         />
       </div>
-
     </div>
   );
 };
