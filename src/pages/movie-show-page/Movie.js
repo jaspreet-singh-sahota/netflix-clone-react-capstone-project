@@ -15,6 +15,32 @@ const Movie = ({ location }) => {
     return null;
   }
 
+  const handleStopVideo = () => {
+    setIsPlaying(false)
+  }
+
+  const handleMovieUrl = (movie) => {
+    movieTrailer((movie ? movie.name : null) || (movie ? movie.title : null) || "")
+      .then((url) => {
+        const urlParams = new URLSearchParams(new URL(url).search);
+        setTrailerUrl(urlParams.get('v'));
+      })
+      .catch(setTrailerUrl('SIZpLFPQLLg'));
+    setIsPlaying(true)
+  }
+
+  const handlePlayVideo = (event) => {
+    event.target.pauseVideo();
+  }
+
+  const opts = {
+    height: '100%',
+    width: '100vw',
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
   function truncate(str, num) {
     return str.length > num ? `${str.substr(0, num - 1)}...` : str;
   }
