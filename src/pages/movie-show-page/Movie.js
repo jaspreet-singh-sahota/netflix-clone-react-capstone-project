@@ -7,6 +7,10 @@ import styles from './styles/Movie.module.css';
 const Movie = ({ location }) => {
   const { movie } = location.state;
 
+  if (!movie) {
+    return null;
+  }
+
   function truncate(str, num) {
     return str.length > num ? `${str.substr(0, num - 1)}...` : str;
   }
@@ -14,7 +18,10 @@ const Movie = ({ location }) => {
   return (
     <div className={styles.container}>
       <div className={styles['info-container']}>
-        <h1 className={styles.text}>{truncate(movie.name, 25) || truncate(movie.title, 25)}</h1>
+        <h1 className={styles.text}>
+          {(movie.name ? truncate(movie.name, 25) : null)
+          || (movie.title ? truncate(movie.title, 25) : null)}
+        </h1>
         <h2 className={styles['movie-info']}>{truncate(movie.overview, 385)}</h2>
         <div className={styles['button-container']}>
           <div className={styles.buttons}>

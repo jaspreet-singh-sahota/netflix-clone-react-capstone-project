@@ -24,7 +24,7 @@
 
 .block {
   position: absolute;
-  left:30%;
+  left: 30%;
   width: 20%;
   height: 100%;
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.71), black);
@@ -53,7 +53,8 @@
   width: 100%;
 }
 
-.play-button, .list-button {
+.play-button,
+.list-button {
   outline: none;
   cursor: pointer;
   border: none;
@@ -76,7 +77,6 @@
 
 .list-button:hover {
   background-color: rgb(29, 28, 28, 0.61);
-
 }
 
 .icons {
@@ -91,6 +91,3 @@
   bottom: 51px;
   left: 51px;
 }
-
-
-

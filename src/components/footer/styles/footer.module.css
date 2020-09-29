@@ -1,10 +1,10 @@
-.flex-container{
+.flex-container {
   display: flex;
   padding: 70px 56px;
   flex-direction: column;
   margin: auto;
   max-width: 1100px;
-  
+
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
@@ -21,7 +21,6 @@
   flex-direction: column;
   text-align: left;
 }
-
 
 .row {
   display: grid;
@@ -56,9 +55,9 @@
 
 .service-button {
   color: #808080;
-  border:  1px solid #808080;
+  border: 1px solid #808080;
   font-size: 13.4px;
-  padding: .5em;
+  padding: 0.5em;
   width: fit-content;
   cursor: pointer;
 }

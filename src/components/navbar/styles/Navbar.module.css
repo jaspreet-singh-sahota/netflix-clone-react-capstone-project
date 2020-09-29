@@ -1,26 +1,26 @@
-.navbar{
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
   height: 68px;
   z-index: 110;
-  transition-timing-function: ease-in;
   transition: all 0.5s;
+  transition-timing-function: ease-in;
 }
 
-.link, .search-container{
-color: #fff;
-font-weight: lighter;
-font-size: 14px;
-margin-left: 18px;
-cursor: pointer;
-text-decoration: none;
+.link,
+.search-container {
+  color: #fff;
+  font-weight: lighter;
+  font-size: 14px;
+  margin-left: 18px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .link:hover {
   color: #999;
 }
-
 
 .search-container {
   height: 100%;
@@ -28,7 +28,10 @@ text-decoration: none;
   align-items: center;
 }
 
-.icons, .dropdown, .children, .gift{
+.icons,
+.dropdown,
+.children,
+.gift {
   margin-right: 20px;
   margin-top: 1px;
   font-size: 22px;
@@ -38,7 +41,7 @@ text-decoration: none;
 .search-icon {
   position: relative;
   font-size: 20px;
-  left: 58px
+  left: 58px;
 }
 
 .dropdown {
@@ -46,7 +49,7 @@ text-decoration: none;
   margin-right: 0;
   margin-left: 4px;
 }
-            
+
 .children {
   font-size: 13.5px;
   font-weight: 400;
@@ -71,7 +74,7 @@ text-decoration: none;
   display: flex;
 }
 
-.logo{
+.logo {
   margin-top: 3px;
   width: 93px;
   object-fit: contain;
@@ -81,7 +84,7 @@ text-decoration: none;
   margin-left: 0;
 }
 
-.avatar{
+.avatar {
   margin-top: 3px;
   right: 50px;
   width: 30px;

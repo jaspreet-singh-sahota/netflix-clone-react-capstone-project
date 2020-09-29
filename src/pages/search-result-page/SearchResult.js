@@ -29,7 +29,7 @@ SearchResult.propTypes = {
       backdrop_path: PropTypes.string,
       name: PropTypes.string,
     })),
-  }))
+  })),
 };
 
 SearchResult.defaultProps = {
