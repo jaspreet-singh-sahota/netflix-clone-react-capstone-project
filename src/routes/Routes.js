@@ -20,7 +20,7 @@ const Routes = () => (
       <Route path="/horror/" component={MovieCategory} exact />
       <Route path="/comedy/" component={MovieCategory} exact />
       <Route path="/top_rated/" component={MovieCategory} exact />
-      <Route path="/movie/:id" component={Movie} exact />
+      <Route path="/:movie/:id" component={Movie} />
     </Switch>
     <Footer />
   </BrowserRouter>

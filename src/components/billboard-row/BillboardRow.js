@@ -24,7 +24,6 @@ const BillboardRow = () => {
   }
 
   return (
-    <div>
       <div className={styles['image-container']}>
 
         <div>
@@ -50,7 +49,6 @@ const BillboardRow = () => {
         </div>
 
       </div>
-    </div>
   );
 };
 

@@ -51,7 +51,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div>
+    <>
       <div className={`${styles.navbar} ${show && styles.navbarColor}`}>
         <div className={styles['flex-container']}>
           <div className={styles['flex-container-logo']}>
@@ -95,7 +95,7 @@ function Navbar() {
         </div>
       </div>
       {searchActive ? <SearchResult movies={search} /> : null}
-    </div>
+    </>
   );
 }
 

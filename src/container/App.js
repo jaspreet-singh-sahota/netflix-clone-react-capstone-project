@@ -15,10 +15,10 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <BillboardRow />
       <RowContainer />
-    </div>
+    </>
   );
 }
 
