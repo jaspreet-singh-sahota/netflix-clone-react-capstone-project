@@ -18,7 +18,10 @@ const MovieCategory = ({ location }) => {
 MovieCategory.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
-    state: PropTypes.string,
+    state: PropTypes.shape({
+      category: PropTypes.string,
+      title: PropTypes.string
+    })
   }),
 };
 
