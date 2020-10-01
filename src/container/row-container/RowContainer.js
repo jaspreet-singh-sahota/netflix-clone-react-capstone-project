@@ -14,7 +14,7 @@ const RowContainer = () => (
     <Row category="TopRated">Top Rated</Row>
     <Row category="RomanceMovies">Romance Movies</Row>
     <Row category="HorrorMovies">Horror Movies</Row>
-    <Row category="Documentaries">Documentaries</Row>
+    <Row category="Drama">Drama</Row>
   </div>
 );
 

@@ -13,8 +13,17 @@ function Row({
   const FilteredMovies = FilteredData ? FilteredData[0] : [];
   let movieKeys;
 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+  }
+
   if (FilteredMovies) {
-    movieKeys = Object.keys(FilteredMovies[category]);
+    const movieArray = Object.keys(FilteredMovies[category]);
+    movieKeys = shuffleArray(movieArray)
   }
 
   return (
