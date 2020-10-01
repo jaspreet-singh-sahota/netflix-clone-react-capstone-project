@@ -27,12 +27,13 @@ function Navbar() {
 
   const clearInputField = () => {
     setSearch([])
+    setSearchActive(false)
+    document.querySelectorAll('input')[0].value = ''
   }
 
   const uniqueMovies = getUniqueMovies(movies, 'id');
 
   const handleSearch = e => {
-    
     if (e.target.value === '') {
       setSearch([]);
       setSearchActive(false);
@@ -77,8 +78,8 @@ function Navbar() {
           </div>
           <div className={styles['search-container']}>
             <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
-            {searchActive
-              ? <Redirect className={styles.link} to="/search" /> : <Redirect to="/" />}
+            {searchActive && <Redirect className={styles.link} to="/search" /> }
+            {!searchActive && <Redirect to='/'/> }
             <input
               type="text"
               placeholder="Title, people, genres"
@@ -104,4 +105,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default React.memo(Navbar);

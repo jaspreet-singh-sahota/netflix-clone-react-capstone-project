@@ -6,6 +6,7 @@
   z-index: 110;
   transition: all 0.5s;
   transition-timing-function: ease-in;
+  background-image: linear-gradient(black, transparent);
 }
 
 .link,

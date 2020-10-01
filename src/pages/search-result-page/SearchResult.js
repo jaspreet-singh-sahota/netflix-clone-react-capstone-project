@@ -9,16 +9,22 @@ const SearchResult = ({ movies }) => {
     return null;
   }
 
+  const clearInputField = () => {
+    document.querySelectorAll('input')[0].value = ''
+  }
+
   return (
-    <div className={styles['container-result']}>
-      {movies.map(movie => (
-        <Link to={{ pathname: `/movie/${movie.id}`, state: {movie}}}><img
-          key={movie.id}
-          className={styles.image}
-          src={`${IMAGE_URL}${movie.backdrop_path}`}
-          alt={movie.name}
-        /></Link>
-      ))}
+    <div>
+      <div className={styles['container-result']}>
+        {movies.map(movie => (
+          <Link onClick={clearInputField} to={{ pathname: `/movie/${movie.id}`, state: { movie } }}><img
+            key={movie.id}
+            className={styles.image}
+            src={`${IMAGE_URL}${movie.backdrop_path}`}
+            alt={movie.name}
+          /></Link>
+        ))}
+      </div>
     </div>
   );
 };
