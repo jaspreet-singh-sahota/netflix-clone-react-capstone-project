@@ -9,7 +9,7 @@
   position: absolute;
   top: 70px;
   width: 100%;
-  height: 80%;
+  height: 82.9%;
   z-index: 1000;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .image-container {
-  width: 70%;
+  width: 80%;
 }
 
 .info-container {
@@ -40,7 +40,7 @@
 
 .block {
   position: absolute;
-  left: 30%;
+  left: 27.2%;
   width: 20%;
   height: 100%;
   background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.71), black);
@@ -48,8 +48,10 @@
 }
 
 .text {
+  position: absolute;
   margin-left: 51px;
   margin-top: 51px;
+  z-index: 2;
 }
 
 .movie-info {
@@ -80,6 +82,7 @@
   padding: 0.45rem 1.65rem 0.65rem 1.65rem;
   background-color: #f30000;
   color: #fff;
+  z-index: 1;
 }
 
 .play-button:hover {
