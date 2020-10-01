@@ -19,8 +19,7 @@ const SearchResult = ({ movies, setSearchActive, setIsImageClicked}) => {
     <div>
       <div className={styles['container-result']}>
         {movies.map(movie => (
-          <Link onClick={clearInputField} to={{ pathname: `/:movie/${movie.id}`, state: { movie } }}><img
-            key={movie.id}
+          <Link key={movie.id} onClick={clearInputField} to={{ pathname: `/:movie/${movie.id}`, state: { movie } }}><img
             className={styles.image}
             src={`${IMAGE_URL}${movie.backdrop_path}`}
             alt={movie.name}
