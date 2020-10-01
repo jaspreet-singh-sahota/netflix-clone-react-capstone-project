@@ -18,16 +18,21 @@ function Navbar() {
   const [search, setSearch] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
-  function getUniqueMovies(movies, key) {
+  const getUniqueMovies = (movies, key) => {
     const unique = movies.map(movie => movie[key])
       .map((movie, i, final) => final.indexOf(movie) === i && i)
       .filter(movie => movies[movie]).map(movie => movies[movie]);
     return unique;
   }
 
+  const clearInputField = () => {
+    setSearch([])
+  }
+
   const uniqueMovies = getUniqueMovies(movies, 'id');
 
   const handleSearch = e => {
+    
     if (e.target.value === '') {
       setSearch([]);
       setSearchActive(false);
@@ -63,11 +68,11 @@ function Navbar() {
               />
             </NavLink>
             <div className={styles.links}>
-              <NavLink className={styles.link} to="/" exact activeStyle={{ fontWeight: 'bold' }}>Home</NavLink>
-              <NavLink className={styles.link} to={{ pathname: '/action/', state: { category: 'ActionMovies', title: 'Action' } }} exact activeStyle={{ fontWeight: 'bold' }}>Action</NavLink>
-              <NavLink className={styles.link} to={{ pathname: '/horror/', state: { category: 'HorrorMovies', title: 'Horror' } }} exact activeStyle={{ fontWeight: 'bold' }}>Horror</NavLink>
-              <NavLink className={styles.link} to={{ pathname: '/comedy/', state: { category: 'ComedyMovies', title: 'Comedy' } }} exact activeStyle={{ fontWeight: 'bold' }}>Comedy</NavLink>
-              <NavLink className={styles.link} to={{ pathname: '/top_rated/', state: { category: 'TopRated', title: 'Top rated' } }} exact activeStyle={{ fontWeight: 'bold' }}>Top rated</NavLink>
+              <NavLink className={styles.link} onClick={clearInputField} to="/" exact activeStyle={{ fontWeight: 'bold' }}>Home</NavLink>
+              <NavLink className={styles.link} onClick={clearInputField} to={{ pathname: '/action/', state: { category: 'ActionMovies', title: 'Action' } }} exact activeStyle={{ fontWeight: 'bold' }}>Action</NavLink>
+              <NavLink className={styles.link} onClick={clearInputField} to={{ pathname: '/horror/', state: { category: 'HorrorMovies', title: 'Horror' } }} exact activeStyle={{ fontWeight: 'bold' }}>Horror</NavLink>
+              <NavLink className={styles.link} onClick={clearInputField} to={{ pathname: '/comedy/', state: { category: 'ComedyMovies', title: 'Comedy' } }} exact activeStyle={{ fontWeight: 'bold' }}>Comedy</NavLink>
+              <NavLink className={styles.link} onClick={clearInputField} to={{ pathname: '/top_rated/', state: { category: 'TopRated', title: 'Top rated' } }} exact activeStyle={{ fontWeight: 'bold' }}>Top rated</NavLink>
             </div>
           </div>
           <div className={styles['search-container']}>
