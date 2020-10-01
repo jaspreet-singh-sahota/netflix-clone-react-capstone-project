@@ -16,7 +16,8 @@ function Navbar() {
   const moviesData = useSelector(state => state.allMovies);
   const movies = moviesData ? (moviesData.movieCollection) : [];
   const [search, setSearch] = useState([]);
-  const [searchActive, setSearchActive] = useState(false);
+  const [isSearchActive, setSearchActive] = useState(false);
+  const [isImageClicked, setIsImageClicked] = useState(false);
 
   const getUniqueMovies = (movies, key) => {
     const unique = movies.map(movie => movie[key])
@@ -78,8 +79,8 @@ function Navbar() {
           </div>
           <div className={styles['search-container']}>
             <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
-            {searchActive && <Redirect className={styles.link} to="/search" /> }
-            {!searchActive && <Redirect to='/'/> }
+            {isSearchActive && <Redirect className={styles.link} to="/search"/> }
+            {!isSearchActive && !isImageClicked && <Redirect to='/'/> }
             <input
               type="text"
               placeholder="Title, people, genres"
@@ -100,7 +101,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      {searchActive ? <SearchResult movies={search} /> : null}
+      {isSearchActive ? <SearchResult setIsImageClicked={setIsImageClicked} setSearchActive={setSearchActive} movies={search} /> : null}
     </>
   );
 }

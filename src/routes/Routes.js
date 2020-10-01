@@ -20,7 +20,6 @@ const Routes = () => {
     dispatch(axios());
   }, []);
 
-  console.log('render')
   return (
     <BrowserRouter>
       <LastLocationProvider>

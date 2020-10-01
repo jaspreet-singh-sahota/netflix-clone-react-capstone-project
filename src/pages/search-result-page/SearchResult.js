@@ -4,20 +4,22 @@ import { IMAGE_URL } from '../../axios/API_END_POINTS';
 import styles from './styles/searchResult.module.css';
 import { Link } from 'react-router-dom';
 
-const SearchResult = ({ movies }) => {
+const SearchResult = ({ movies, setSearchActive, setIsImageClicked}) => {
   if (!movies) {
     return null;
   }
 
   const clearInputField = () => {
     document.querySelectorAll('input')[0].value = ''
+    setSearchActive(false)
+    setIsImageClicked(true)
   }
 
   return (
     <div>
       <div className={styles['container-result']}>
         {movies.map(movie => (
-          <Link onClick={clearInputField} to={{ pathname: `/movie/${movie.id}`, state: { movie } }}><img
+          <Link onClick={clearInputField} to={{ pathname: `/:movie/${movie.id}`, state: { movie } }}><img
             key={movie.id}
             className={styles.image}
             src={`${IMAGE_URL}${movie.backdrop_path}`}
