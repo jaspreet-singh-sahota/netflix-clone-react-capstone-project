@@ -11,7 +11,7 @@ const BillboardRow = () => {
   let FilteredMovies;
 
   if (FilteredData) {
-  /* eslint-disable  prefer-destructuring */
+    /* eslint-disable  prefer-destructuring */
     FilteredMovies = FilteredData[0];
   }
 
@@ -24,31 +24,31 @@ const BillboardRow = () => {
   }
 
   return (
-      <div className={styles['image-container']}>
+    <div className={styles['image-container']}>
 
-        <div>
-          <img
-            className={styles.image}
-            src={`${IMAGE_URL}${selectedMovie ? selectedMovie.backdrop_path : ''}`}
-            alt="Billboard-cover"
-          />
-          <div className={styles.contents}>
-            <button type="submit" className={styles.button}>
-              <GrPlayFill className={styles.icons} />
-              Play
-            </button>
-            <button type="submit" className={`${styles.button} ${styles.button2}`}>
-              <FiInfo className={styles.icons} />
-              More info
-            </button>
-          </div>
+      <div>
+        <img
+          className={styles.image}
+          src={`${IMAGE_URL}${selectedMovie ? selectedMovie.backdrop_path : ''}`}
+          alt="Billboard-cover"
+        />
+        <div className={styles.contents}>
           <h1 className={styles.description}>
             {truncate((selectedMovie ? selectedMovie.overview : ''), 132)}
           </h1>
-          <div className={styles.fadeBottom} />
+          <button type="submit" className={styles.button}>
+            <GrPlayFill className={styles.icons} />
+            Play
+            </button>
+          <button type="submit" className={`${styles.button} ${styles.button2}`}>
+            <FiInfo className={styles.icons} />
+            More info
+            </button>
         </div>
-
+        <div className={styles.fadeBottom} />
       </div>
+
+    </div>
   );
 };
 

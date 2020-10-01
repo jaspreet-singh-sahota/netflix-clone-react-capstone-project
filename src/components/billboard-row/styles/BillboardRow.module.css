@@ -15,9 +15,8 @@
 
 .contents {
   position: absolute;
-  top: 45%;
+  top: 53%;
   margin-left: 51px;
-  padding-top: 140px;
   height: 190px;
   z-index: 100;
 }
@@ -59,18 +58,15 @@
 
 .description {
   z-index: 1;
-  position: absolute;
   font-weight: 400;
   max-width: 480px;
   height: 80px;
   color: #fff;
-  margin-left: 51px;
-  top: 52%;
   width: 100%;
   line-height: 4vh;
   font-size: 1.4vw;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.5rem;
 }
 
 .fadeBottom {
