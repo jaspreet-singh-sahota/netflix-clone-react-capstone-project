@@ -20,8 +20,8 @@ MovieCategory.propTypes = {
     pathname: PropTypes.string,
     state: PropTypes.shape({
       category: PropTypes.string,
-      title: PropTypes.string
-    })
+      title: PropTypes.string,
+    }),
   }),
 };
 

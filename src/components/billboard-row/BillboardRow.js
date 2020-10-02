@@ -39,11 +39,11 @@ const BillboardRow = () => {
           <button type="submit" className={styles.button}>
             <GrPlayFill className={styles.icons} />
             Play
-            </button>
+          </button>
           <button type="submit" className={`${styles.button} ${styles.button2}`}>
             <FiInfo className={styles.icons} />
             More info
-            </button>
+          </button>
         </div>
         <div className={styles.fadeBottom} />
       </div>

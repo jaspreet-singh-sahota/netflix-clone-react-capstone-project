@@ -14,16 +14,17 @@ function Row({
   let movieKeys;
 
   function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+    for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
+      /* eslint-disable no-param-reassign */
       [array[i], array[j]] = [array[j], array[i]];
     }
-    return array
+    return array;
   }
 
   if (FilteredMovies) {
     const movieArray = Object.keys(FilteredMovies[category]);
-    movieKeys = shuffleArray(movieArray)
+    movieKeys = shuffleArray(movieArray);
   }
 
   return (

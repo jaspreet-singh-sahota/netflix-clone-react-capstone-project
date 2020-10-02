@@ -24,13 +24,13 @@ function Navbar() {
       .map((movie, i, final) => final.indexOf(movie) === i && i)
       .filter(movie => movies[movie]).map(movie => movies[movie]);
     return unique;
-  }
+  };
 
   const clearInputField = () => {
-    setSearch([])
-    setSearchActive(false)
-    document.querySelectorAll('input')[0].value = ''
-  }
+    setSearch([]);
+    setSearchActive(false);
+    document.querySelectorAll('input')[0].value = '';
+  };
 
   const uniqueMovies = getUniqueMovies(movies, 'id');
 
@@ -79,8 +79,8 @@ function Navbar() {
           </div>
           <div className={styles['search-container']}>
             <ImSearch className={`${styles.icons} ${styles['search-icon']}`} />
-            {isSearchActive && <Redirect className={styles.link} to="/search"/> }
-            {!isSearchActive && !isImageClicked && <Redirect to='/'/> }
+            {isSearchActive && <Redirect className={styles.link} to="/search" />}
+            {!isSearchActive && !isImageClicked && <Redirect to="/" />}
             <input
               type="text"
               placeholder="Title, people, genres"
@@ -101,7 +101,15 @@ function Navbar() {
           </div>
         </div>
       </div>
-      {isSearchActive ? <SearchResult setIsImageClicked={setIsImageClicked} setSearchActive={setSearchActive} movies={search} /> : null}
+      {isSearchActive
+        ? (
+          <SearchResult
+            setIsImageClicked={setIsImageClicked}
+            setSearchActive={setSearchActive}
+            movies={search}
+          />
+        )
+        : null}
     </>
   );
 }
