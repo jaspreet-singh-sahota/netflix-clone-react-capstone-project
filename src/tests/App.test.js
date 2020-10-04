@@ -4,7 +4,7 @@ import App from '../container/App';
 import BillboardRow from '../components/billboard-row/BillboardRow';
 import RowContainer from '../container/row-container/RowContainer';
 
-describe('Footer', () => {
+describe('App', () => {
   it('should render a <BillboardRow /> component', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find(BillboardRow)).toHaveLength(1);
