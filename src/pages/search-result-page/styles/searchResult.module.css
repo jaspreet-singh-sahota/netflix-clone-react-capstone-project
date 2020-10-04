@@ -1,0 +1,25 @@
+.image {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 150px;
+  min-height: 100px;
+  transition: transform 450ms;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+
+.image:hover {
+  transform: scale(1.08);
+}
+
+.container-result {
+  margin: 120px 51px 0 51px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 7px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

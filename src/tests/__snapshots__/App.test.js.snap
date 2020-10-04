@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Aoo matches App snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`App matches App snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`Footer matches App snapshot 1`] = `ShallowWrapper {}`;

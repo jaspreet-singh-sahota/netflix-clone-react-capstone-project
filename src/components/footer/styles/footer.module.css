@@ -1,0 +1,84 @@
+.flex-container {
+  display: flex;
+  padding: 70px 56px;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1100px;
+
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
+}
+
+.footer {
+  bottom: 0;
+  margin: auto;
+  max-width: 1100px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.link {
+  color: #808080;
+  margin-bottom: 15px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 16px;
+  color: #808080;
+  margin-bottom: 10px;
+}
+
+.service-button-container {
+  margin-top: -56px;
+  padding: 0 56px 70px 56px;
+}
+
+.service-button {
+  color: #808080;
+  border: 1px solid #808080;
+  font-size: 13.4px;
+  padding: 0.5em;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.service-button:hover {
+  color: white;
+}
+
+.icons {
+  font-size: 25px;
+  margin: 0 14px;
+  cursor: pointer;
+}
+
+.icons:first-child {
+  margin-left: 0;
+}
+
+.icons2 {
+  position: relative;
+  font-size: 29px;
+  margin: 0 15px;
+  cursor: pointer;
+}

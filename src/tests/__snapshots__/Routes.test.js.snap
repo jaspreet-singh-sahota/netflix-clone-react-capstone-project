@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes matches Render snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`RowContainer matches RowContainer snapshot 1`] = `ShallowWrapper {}`;

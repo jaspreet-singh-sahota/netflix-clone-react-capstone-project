@@ -1,0 +1,8 @@
+.container {
+  margin-top: 100px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
