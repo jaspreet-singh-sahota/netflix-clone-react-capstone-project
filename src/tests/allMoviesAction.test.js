@@ -1,5 +1,5 @@
-import fetchAllMovies from "../redux/actions/all-movies-actions/allMoviesAction";
-import { FETCH_ALL_MOVIES } from "../redux/actions/actionType";
+import fetchAllMovies from '../redux/actions/all-movies-actions/allMoviesAction';
+import { FETCH_ALL_MOVIES } from '../redux/actions/actionType';
 
 describe('get Movies', () => {
   const parameter = 'movie';
@@ -17,7 +17,7 @@ describe('get Movies', () => {
     const expectedAction = {
       type: FETCH_ALL_MOVIES,
       payload: parameter,
-      genre: genre,
+      genre,
     };
     expect(fetchAllMovies(parameter, genre)).toEqual(expectedAction);
   });

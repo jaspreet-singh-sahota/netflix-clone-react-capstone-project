@@ -7,11 +7,11 @@ describe('get Characters', () => {
     movieCollection: [],
     error: '',
   };
-  
+
   it('should return the initial state', () => {
     expect(allMoviesReducer(undefined, {
       type: FETCH_ALL_MOVIES,
-      payload: ''
+      payload: '',
     })).toEqual(initialState);
   });
 });

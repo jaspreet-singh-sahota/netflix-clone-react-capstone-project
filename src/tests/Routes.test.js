@@ -1,19 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Routes from '../routes/Routes';
-import Row from '../components/row/Row';
-import { useDispatch } from 'react-redux';
-import Navbar from '../components/navbar/Navbar';
-import Footer from '../components/footer/Footer';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-
+import Routes from '../routes/Routes';
+import Navbar from '../components/navbar/Navbar';
+import Footer from '../components/footer/Footer';
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
-  useDispatch: () => mockDispatch
+  useDispatch: () => mockDispatch,
 }));
-
 
 describe('Routes', () => {
   it('should render a <Navbar /> component', () => {
@@ -45,4 +41,4 @@ describe('Routes', () => {
     const wrapper = shallow(<Routes />);
     expect(wrapper).toMatchSnapshot();
   });
-})
+});

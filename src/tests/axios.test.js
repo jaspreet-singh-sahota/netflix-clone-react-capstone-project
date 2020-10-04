@@ -1,4 +1,4 @@
-import fetchMovieCollection from "../axios/axios";
+import fetchMovieCollection from '../axios/axios';
 
 describe('async operation on api calls', () => {
   it('should be defined', () => {

@@ -9,9 +9,8 @@ describe('RowContainer', () => {
     expect(wrapper.find(Row)).toHaveLength(8);
   });
 
-
   it('matches RowContainer snapshot', () => {
     const wrapper = shallow(<RowContainer />);
     expect(wrapper).toMatchSnapshot();
   });
-})
+});

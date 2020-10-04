@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from '../components/footer/Footer';
 import {
   ImFacebook2, ImInstagram, ImTwitter, ImYoutube,
 } from 'react-icons/im';
+import Footer from '../components/footer/Footer';
 
 describe('Footer', () => {
   it('should render a facebook icon', () => {
     const wrapper = shallow(<Footer />);
     expect(wrapper.find(ImInstagram)).toHaveLength(1);
   });
-
 
   it('should render a instagram icon', () => {
     const wrapper = shallow(<Footer />);
@@ -31,4 +30,4 @@ describe('Footer', () => {
     const wrapper = shallow(<Footer />);
     expect(wrapper).toMatchSnapshot();
   });
-})
+});

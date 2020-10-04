@@ -46,6 +46,8 @@ SearchResult.propTypes = {
 
 SearchResult.defaultProps = {
   movies: [],
+  setIsImageClicked: undefined,
+  setSearchActive: undefined
 };
 
 export default SearchResult;

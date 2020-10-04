@@ -18,15 +18,17 @@ describe('get Characters', () => {
     expect(moviesCategoryReducer(initialState, {
       type: FETCH_MOVIE_COLLECTION_SUCCESS,
       payload: { lost: 'lost', spiderMan: 'spider man', moneyHeist: 'moneyHeist' },
-      genre: 'Trending'
+      genre: 'Trending',
     })).toEqual({
-      "error": "", "loading": false, "movieCollection": [{
-        "Trending": {
-          "lost": "lost",
-          "moneyHeist": "moneyHeist",
-          "spiderMan": "spider man",
+      error: '',
+      loading: false,
+      movieCollection: [{
+        Trending: {
+          lost: 'lost',
+          moneyHeist: 'moneyHeist',
+          spiderMan: 'spider man',
         },
-      }]
+      }],
     });
   });
 
@@ -34,9 +36,9 @@ describe('get Characters', () => {
     expect(moviesCategoryReducer(initialState, {
       type: FETCH_MOVIE_COLLECTION_FAILURE,
       payload: 'error message',
-      genre: 'Trending'
+      genre: 'Trending',
     })).toEqual({
-      "error": "error message", "loading": false, "movieCollection": []
+      error: 'error message', loading: false, movieCollection: [],
     });
   });
 });
