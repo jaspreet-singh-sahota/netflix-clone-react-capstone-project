@@ -66,7 +66,13 @@
   line-height: 4vh;
   font-size: 1.4vw;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
+}
+
+@media only screen and (min-width: 1400px) {
+  .description {
+    padding-bottom: 5vh;
+  }
 }
 
 .fadeBottom {
