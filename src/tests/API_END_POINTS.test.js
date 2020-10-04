@@ -1,4 +1,4 @@
-import requests, { IMAGE_URL } from "../../axios/API_END_POINTS";
+import requests, { IMAGE_URL } from "../axios/API_END_POINTS";
 
 describe('IMAGE_URL', () => {
   it('should render be a string', () => {

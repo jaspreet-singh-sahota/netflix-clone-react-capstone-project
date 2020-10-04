@@ -1,4 +1,4 @@
-import API_KEY from "../../axios/API_KEY";
+import API_KEY from "../axios/API_KEY";
 
 describe('API_KEY', () => {
   it('should render be a string', () => {

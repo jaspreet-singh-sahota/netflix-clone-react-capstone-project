@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from '../../components/footer/Footer';
+import Footer from '../components/footer/Footer';
 import {
   ImFacebook2, ImInstagram, ImTwitter, ImYoutube,
 } from 'react-icons/im';

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer matches App snapshot 1`] = `ShallowWrapper {}`;
