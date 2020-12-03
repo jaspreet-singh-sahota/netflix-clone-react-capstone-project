@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^6.8.0",
